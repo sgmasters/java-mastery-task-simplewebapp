@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/index.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Simple CRUD webapp</title>
+</head>
+<body>
+<h1>Employees</h1>
+<h2>Practical task for Godel Technologies</h2>
+<div class="data-input-block">
+    <label for="employeeId">Id</label>
+    <input class="input-id" id="employeeId" title="Input id" type="text">
+    <div id="employeeData">
+        <label for="firstName">First Name</label>
+        <input class="input-employee-data" id="firstName" title="Input Employee First Name" type="text">
+        <label for="lastName">Last Name</label>
+        <input class="input-employee-data" id="lastName" title="Input Employee Last Name" type="text">
+        <label for="departmentId">Department Id</label>
+        <input class="input-employee-data" id="departmentId" title="Input Employee Department Id" type="text">
+        <label for="jobTitle">Job Title</label>
+        <input class="input-employee-data" id="jobTitle" title="Input Employee Job Title" type="text">
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input class="input-employee-data" id="dateOfBirth" title="Input Employee Date Of Birth" type="text">
+    </div>
+</div>
+<div class="control-block">
+    <button onclick="createEmployee()" type="button">Create an employee</button>
+    <button onclick="updateEmployee()" type="button">Update an employee</button>
+    <button onclick="loadList()" type="button">Show all employees</button>
+    <button onclick="deleteAll()" type="button">Delete all employees</button>
+    <button onclick="loadOneById()" type="button">Show an employee by id</button>
+    <button onclick="deleteOne()" type="button">Delete an employee by id</button>
+</div>
+<div class="task">
+    <div class="list-of-employees" id="listOfEmployees">
+
+    </div>
+</div>
+<script src="js/script.js"></script>
+<div class="description">
+    <p>In this task, I used Spring Boot, and during the study, it became interesting for me to try all its features, so
+        I implemented Dao first using the @Repository annotation and inherited from the Spring Data JpaRepository
+        already implemented. Then to comply with the task implemented jdbcDao in a separate branch:
+        <a href="https://github.com/sgmasters/java-mastery-task-simplewebapp/tree/spring_jdbc_dao_implementation">spring_jdbc_dao_implementation</a>.
+    </p>
+    <p>EmployeeService essentially only delegates the execution of Dao requests to the class. An important point was the
+        work with the Date type in PostgreSQL. I even had to create an additional Converter class from java LocalDate to
+        Date type in DB.
+    </p>
+    <p>After completing the main part of the task, I took up the unit tests. Implemented a test for
+        SpringBootApplication that checks the loading of the application context. In addition, a test for a REST
+        controller. The test checks the performance of all available CRUD operations.
+    </p>
+    <p>I tried to write my UI using Angular framework, but look like it needs too much additional efforts. So I decided
+        to write requests via Ajax.
+    </p>
+    <div id="readMe">
+        See
+        <a href="https://github.com/sgmasters/java-mastery-task-simplewebapp/blob/master/README.md">
+            ReadMe
+        </a>
+        .
+    </div>
+</div>
+</body>
+</html>

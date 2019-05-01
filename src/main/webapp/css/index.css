@@ -1,0 +1,75 @@
+html {
+    background: lightgray;
+    text-align: center;
+}
+
+.list-of-employees {
+    padding: 20px;
+    color: #700;
+}
+
+.task {
+    box-sizing: border-box;
+    width: 60%;
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+.description {
+    box-sizing: border-box;
+    width: 40%;
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.light {
+    background-color: cornflowerblue;
+    color: #770000;
+}
+
+.withoutLight {
+}
+
+.control-block {
+    display: block;
+    padding: 10px;
+}
+
+.data-input-block {
+    display: block;
+    padding: 10px;
+}
+
+button {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 5px 20px;
+}
+
+.input-id {
+    height: 24px;
+    width: 30px;
+    padding: 5px 15px;
+}
+
+.input-employee-data {
+    height: 24px;
+    width: 80px;
+    padding: 5px 15px;
+}
+
+h2 {
+    color: #333;
+}
+
+label {
+    font-size: 20px;
+}
