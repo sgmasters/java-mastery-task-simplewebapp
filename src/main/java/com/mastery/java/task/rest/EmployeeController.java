@@ -45,7 +45,8 @@ public class EmployeeController {
         Employee employee = employeeService.findEmployeeById(id);
         if (employee == null) {
             LOGGER.error("Employee with id {} not found.", id);
-            return new ResponseEntity<>(new RestException("Employee with id " + id + " not found"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new RestException("Employee with id " + id
+                    + " not found"), HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(employee, HttpStatus.OK);
         }
@@ -90,7 +91,7 @@ public class EmployeeController {
         currentEmployee.setGender(employee.getGender());
         currentEmployee.setDateOfBirth(employee.getDateOfBirth());
 
-        employeeService.updateEmployee(currentEmployee);
+        employeeService.updateEmployee(currentEmployee, id);
         return new ResponseEntity<>(currentEmployee, HttpStatus.ACCEPTED);
     }
 

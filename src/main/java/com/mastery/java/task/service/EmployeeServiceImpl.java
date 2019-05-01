@@ -1,44 +1,45 @@
 package com.mastery.java.task.service;
 
-import com.mastery.java.task.dao.EmployeeRepository;
+import com.mastery.java.task.dao.EmployeeDao;
 import com.mastery.java.task.dto.Employee;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("employeeService")
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService {
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    private EmployeeDao employeeDao;
+
+    public EmployeeServiceImpl(EmployeeDao employeeDao) {
+        this.employeeDao = employeeDao;
+    }
 
     public List<Employee> getEmployees() {
-        return employeeRepository.findAll();
+        return employeeDao.findAll();
     }
 
     public Employee findEmployeeById(Long employee_id) {
-        return employeeRepository.findOne(employee_id);
+        return employeeDao.findOne(employee_id);
     }
 
     public void createEmployee(Employee employee) {
-        employeeRepository.save(employee);
+        employeeDao.save(employee);
     }
 
-    public void updateEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public void updateEmployee(Employee employee, Long id) {
+        employeeDao.update(employee, id);
     }
 
     public void deleteEmployee(Long employee_id) {
-        employeeRepository.delete(employee_id);
-    }
-
-    public boolean isEmployeeExist(Employee employee) {
-        return employeeRepository.exists(Example.of(employee));
+        employeeDao.delete(employee_id);
     }
 
     public void deleteAllEmployees() {
-        employeeRepository.deleteAll();
+        employeeDao.deleteAll();
+    }
+
+    public boolean isEmployeeExist(Employee employee) {
+        return employeeDao.isExist(employee);
     }
 }
