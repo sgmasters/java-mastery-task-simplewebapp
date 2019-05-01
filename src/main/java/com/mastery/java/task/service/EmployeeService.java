@@ -1,4 +1,21 @@
 package com.mastery.java.task.service;
 
-public class EmployeeService {
+import com.mastery.java.task.dto.Employee;
+import java.util.List;
+
+public interface EmployeeService {
+
+    List<Employee> getEmployees();
+
+    Employee findEmployeeById(Long employee_id);
+
+    void createEmployee(Employee employee);
+
+    void updateEmployee(Employee employee);
+
+    void deleteEmployee(Long employee_id);
+
+    void deleteAllEmployees();
+
+    boolean isEmployeeExist(Employee employee);
 }
