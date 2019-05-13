@@ -96,8 +96,8 @@ For testing app type in command line: ~~~*mvn test.
 
 ## FAQ
 
-"Employee with such id not found" - check Id text box
-"Employee with such id is already exist" - empty Id text box(id is auto generated)
-"No Employees found" - list of Employees is empty
-"Inter correct data" - check text boxes, some of them have incorrect value
-"Inter Id and Employee data" - for updating an Employee all text boxes must be filled
+	*"Employee with such id not found" - check Id text box
+	*"Employee with such id is already exist" - empty Id text box(id is auto generated)
+	*"No Employees found" - list of Employees is empty
+	*"Inter correct data" - check text boxes, some of them have incorrect value
+	*"Inter Id and Employee data" - for updating an Employee all text boxes must be filled
